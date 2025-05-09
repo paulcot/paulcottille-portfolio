@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)file:///Users/paul/Downloads/personal-website.html -->
+<html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Cottille - Management International</title>
+    <style>
+        :root {
+            --primary-color: #1A2F65; /* Bleu principal du CV */
+            --secondary-color: #f5f5f5;
+            --accent-color: #3a5999;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #ddd;
+            border: 4px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 0.8rem;
+            text-align: center;
+        }
+        
+        .profile-text {
+            text-align: left;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary-color);
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        
+        .logo {
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 1.3rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+        
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary-color);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        
+        .about-text h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .skills-container {
+            margin-top: 2rem;
+        }
+        
+        .skill-category {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .experience-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-subtitle {
+            color: #777;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-list {
+            list-style-type: none;
+        }
+        
+        .card-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .card-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+        
+        .education-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            top: 2rem;
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            margin-right: 0;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            right: auto;
+            left: -10px;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background-color: var(--accent-color);
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-text {
+                text-align: center;
+            }
+        }
+    </style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <p>Votre photo ici</p>
+                </div>
+                <div class="profile-text">
+                    <h1>Paul Cottille</h1>
+                    <p class="subtitle">Comment allier gestion de projet, marketing et entrepreneuriat avec succès ?</p>
+                    <p>Mon expérience et ma formation vous apportent la réponse.</p>
+                    <a href="file:///Users/paul/Downloads/personal-website.html#contact" class="btn">Me contacter</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="file:///Users/paul/Downloads/personal-website.html#" class="logo">PC</a>
+            <button class="mobile-toggle">☰</button>
+            <div class="nav-links">
+                <a href="file:///Users/paul/Downloads/personal-website.html#about">À propos</a>
+                <a href="file:///Users/paul/Downloads/personal-website.html#competences">Compétences</a>
+                <a href="file:///Users/paul/Downloads/personal-website.html#experiences">Expériences</a>
+                <a href="file:///Users/paul/Downloads/personal-website.html#formation">Formation</a>
+                <a href="file:///Users/paul/Downloads/personal-website.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="about">
+        <h2 class="section-title">À propos de moi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Qui suis-je?</h3>
+                <p>Je suis un jeune professionnel de 20 ans, diplômé en BTS Commerce International et futur étudiant en Bachelor Management International à l'ESSCA de Bordeaux. Passionné par les dynamiques internationales et le développement commercial, je recherche une opportunité d'apprentissage pour mettre en pratique mes compétences.</p>
+                <p>Mon parcours m'a déjà amené à travailler dans différents contextes culturels, notamment à Cuba et aux Pays-Bas, où j'ai pu développer mes compétences linguistiques et ma compréhension des enjeux internationaux.</p>
+                <h3>Ce que je recherche</h3>
+                <p>Je suis à la recherche d'une opportunité d'apprentissage en Management International avec un rythme d'alternance d'1 semaine de cours pour 2 semaines en entreprise. Mon objectif est de contribuer au développement international d'une entreprise tout en poursuivant ma formation académique.</p>
+            </div>
+            <div class="skills-container">
+                <h3>Langues</h3>
+                <div class="skill-item">
+                    <p><strong>Français</strong> - Langue maternelle</p>
+                </div>
+                <div class="skill-item">
+                    <p><strong>Anglais</strong> - Niveau B2</p>
+                </div>
+                <div class="skill-item">
+                    <p><strong>Espagnol</strong> - Niveau B1</p>
+                </div>
+                
+                <h3>Savoir-être</h3>
+                <div class="skill-item">
+                    <p>Curieux et ouvert d'esprit</p>
+                </div>
+                <div class="skill-item">
+                    <p>Fédérateur</p>
+                </div>
+                <div class="skill-item">
+                    <p>Déterminé et adaptable</p>
+                </div>
+                
+                <h3>Centres d'intérêt</h3>
+                <div class="skill-item">
+                    <p>Natation et voile</p>
+                </div>
+                <div class="skill-item">
+                    <p>Voyages internationaux</p>
+                </div>
+                <div class="skill-item">
+                    <p>Dynamiques internationales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="competences">
+        <h2 class="section-title">Mes compétences</h2>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Développement Commercial International</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <p>Prospection et négociation commerciale</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Analyse et identification d'opportunités à l'étranger</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Stratégie d'implantation internationale</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Veille concurrentielle et études de marché</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Gestion de Projets Internationaux</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <p>Organisation et logistique événementielle</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Coordination avec fournisseurs internationaux</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Pilotage et suivi de projets touristiques</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Animation de réunions multilingues</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Communication &amp; Relations Clients</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <p>Gestion et suivi des relations clients</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Analyse des besoins et proposition de solutions</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Participation à des projets marketing</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Communication interculturelle</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skill-category">
+                <h3>Compétences Techniques</h3>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <p>Suite Office et outils collaboratifs</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Compétences numériques (certification Pix)</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Gestion de stock et logistique</p>
+                    </div>
+                    <div class="skill-item">
+                        <p>Analyse de données commerciales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experiences">
+        <h2 class="section-title">Mes expériences professionnelles</h2>
+        <div class="experience-grid">
+            <div class="experience-card">
+                <div class="card-header">
+                    <h3 class="card-title">Interfaz (EICT) - Commercial</h3>
+                    <p class="card-subtitle">Stage | Janvier-Février 2025 | Cuba</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-list">
+                        <li>Recherche d'opportunités de développement à l'étranger</li>
+                        <li>Stratégie d'implantation, analyse de marché et veille</li>
+                        <li>Application des compétences linguistiques et culturelles</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-card">
+                <div class="card-header">
+                    <h3 class="card-title">Boalgi - Manutentionnaire</h3>
+                    <p class="card-subtitle">Août 2024</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-list">
+                        <li>Opérations d'entrepôt et gestion logistique</li>
+                        <li>Travail d'équipe et respect des délais</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-card">
+                <div class="card-header">
+                    <h3 class="card-title">Fun Amsterdam - Gestion événementielle</h3>
+                    <p class="card-subtitle">Stage | Mai-Juin 2024 | Amsterdam</p>
+                </div>
+                <div class="card-body">
+                    <ul class="card-list">
+                        <li>Coordination logistique d'événements touristiques</li>
+                        <li>Marketing et développement commercial</li>
+                        <li>Étude de marché sur le tourisme fluvial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="formation">
+        <h2 class="section-title">Ma formation</h2>
+        <div class="education-timeline">
+            <div class="timeline-item">
+                <p class="timeline-date">Rentrée 2025</p>
+                <h3>Bachelor Management International</h3>
+                <p>ESSCA - Bordeaux</p>
+                <p>Formation en alternance (1 semaine cours/2 semaines entreprise)</p>
+            </div>
+            
+            <div class="timeline-item">
+                <p class="timeline-date">2023-2025</p>
+                <h3>BTS Commerce International</h3>
+                <p>St Félix-La Salle - Nantes</p>
+            </div>
+            
+            <div class="timeline-item">
+                <p class="timeline-date">2019-2023</p>
+                <h3>Baccalauréat général</h3>
+                <p>Lycée Gabriel Guist'hau - Nantes</p>
+                <p>Spécialités : SES, HGGSP, Anglais LLCE</p>
+            </div>
+            
+            <div class="timeline-item">
+                <p class="timeline-date">2022-2025</p>
+                <h3>Certification numérique Pix</h3>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2 class="section-title">Me contacter</h2>
+        <div class="contact-form">
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" placeholder="Votre nom">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Votre email">
+            </div>
+            
+            <div class="form-group">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" placeholder="Sujet de votre message">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Votre message"></textarea>
+            </div>
+            
+            <button type="submit">Envoyer</button>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/paulcottille-98434626" class="social-link" target="_blank">LinkedIn</a>
+            <a href="mailto:paulcottille@icloud.com" class="social-link">Email</a>
+            <a href="tel:+33629302058" class="social-link">Téléphone</a>
+        </div>
+        <p>© 2025 Paul Cottille - Tous droits réservés</p>
+    </footer>
+    
+    <script>
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
+
+</body></html>
